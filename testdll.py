@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import ctypes
 
-path = 'C:\Windows\System32\msvcrt.dll'
-
-Objdll = ctypes.windll.LoadLibrary(path)
-
-Objdll.printf(b'hello world!\n')
+path = r'C:\Windows\System32\testdll.dll'
+# d = ctypes.CDLL(path)
+d = ctypes.WinDLL(path)
+# dll = ctypes.cdll.LoadLibrary(path)
+ret = d.IntAdd(2, 4)
+print ret
 
 # a = Objdll.scanf()
 # print a
